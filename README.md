@@ -1,9 +1,11 @@
 # AutonomousVehicle-Hardware
 ## CS- 409 Capstone : Benchmarking and Optimizing Hardware for Self Driving Cars.
 
+'''
 Authors
-* [@DebarghaG](www.debarghaganguly.com)
-* @Selahadin Yasin
+* @DebarghaG
+* @Selah18
+'''
 
 The pipeline for computer vision for an Autonomous Vehicle consists of the following stages.
 1. Sensory data acquisition from the attached sensors. ( Eg: Camera, Radar, LIDAR. )
@@ -19,4 +21,4 @@ Computer Vision algorithms chosen for the benchmarking of perfomance :
 4. Structure of motion identification : CPU vs GPU --> Optical Flow
 5. Lane Detection : CPU vs GPU --> Hough Lines Detection for Linear Shapes.
 6. Depth Finding : CPU vs GPU --> Stereo Matching for different cameras.
-7. 
+7.
