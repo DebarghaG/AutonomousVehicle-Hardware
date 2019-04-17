@@ -174,7 +174,7 @@ int main(int argc, const char *argv[])
     Ptr<cuda::CascadeClassifier> cascade_gpu = cuda::CascadeClassifier::create(cascadeName);
 
     cv::CascadeClassifier cascade_cpu;
-    if (!cascade_cpu.load(cascadeName))
+    if (!cascade_cpu.load(cascadeName)) // Change this to Cars.xml
     {
         return cerr << "ERROR: Could not load cascade classifier \"" << cascadeName << "\"" << endl, help(), -1;
     }
