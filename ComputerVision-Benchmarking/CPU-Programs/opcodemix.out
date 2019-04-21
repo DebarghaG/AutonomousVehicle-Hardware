@@ -1,0 +1,933 @@
+#
+# $static-counts
+#
+#     opcode       count-unpredicated    count-predicated
+#
+   5 ADC                         1324                0
+   8 ADD                       921966                0
+   9 ADDPD                     125310                0
+  10 ADDPS                     142771                0
+  11 ADDSD                      59370                0
+  12 ADDSS                      58431                0
+  13 ADDSUBPD                    1542                0
+  14 ADDSUBPS                     858                0
+  15 ADD_LOCK                     986                0
+  17 AESDEC                       156                0
+  18 AESDECLAST                    12                0
+  19 AESENC                       325                0
+  20 AESENCLAST                    25                0
+  21 AESIMC                        13                0
+  22 AESKEYGENASSIST               31                0
+  23 AND                        90313                0
+  24 ANDN                          70                0
+  25 ANDNPD                      1320                0
+  26 ANDNPS                       788                0
+  27 ANDPD                      19141                0
+  28 ANDPS                      22775                0
+  29 AND_LOCK                      23                0
+  41 BLENDVPS                       2                0
+  55 BSF                           73                0
+  56 BSR                          707                0
+  57 BSWAP                       5686                0
+  58 BT                          1027                0
+  59 BTC                           16                0
+  61 BTR                           58                0
+  62 BTR_LOCK                      10                0
+  63 BTS                           52                0
+  64 BTS_LOCK                       5                0
+  65 BZHI                           3                0
+  67 CALL_NEAR                 868583                0
+  68 CBW                            6                0
+  69 CDQ                         3205                0
+  70 CDQE                       27257                0
+  72 CLC                            9                0
+  73 CLD                           46                0
+  77 CLI                           12                0
+  82 CMC                            5                0
+  99 CMP                       589509                0
+ 100 CMPPD                       1018                0
+ 101 CMPPS                        610                0
+ 102 CMPSB                          2                0
+ 103 CMPSD                          3                0
+ 104 CMPSD_XMM                   1348                0
+ 106 CMPSS                       1257                0
+ 108 CMPXCHG                      236                0
+ 113 CMPXCHG_LOCK                 719                0
+ 114 COMISD                      4211                0
+ 115 COMISS                      3672                0
+ 116 CPUID                         59                0
+ 117 CQO                         1648                0
+ 119 CVTDQ2PD                      46                0
+ 120 CVTDQ2PS                     120                0
+ 121 CVTPD2DQ                       6                0
+ 123 CVTPD2PS                      12                0
+ 124 CVTPI2PD                       4                0
+ 125 CVTPI2PS                       8                0
+ 126 CVTPS2DQ                      61                0
+ 127 CVTPS2PD                     896                0
+ 128 CVTPS2PI                       4                0
+ 129 CVTSD2SI                     329                0
+ 130 CVTSD2SS                    1462                0
+ 131 CVTSI2SD                   10970                0
+ 132 CVTSI2SS                    3694                0
+ 133 CVTSS2SD                    4261                0
+ 134 CVTSS2SI                     202                0
+ 135 CVTTPD2DQ                     18                0
+ 137 CVTTPS2DQ                     13                0
+ 139 CVTTSD2SI                   4609                0
+ 140 CVTTSS2SI                   1590                0
+ 142 CWDE                         380                0
+ 145 DEC                        27874                0
+ 146 DEC_LOCK                     354                0
+ 147 DIV                         5314                0
+ 148 DIVPD                         13                0
+ 149 DIVPS                         29                0
+ 150 DIVSD                      20687                0
+ 151 DIVSS                      18401                0
+ 154 EMMS                         186                0
+ 160 ENTER                          1                0
+ 161 EXTRACTPS                      3                0
+ 163 F2XM1                          5                0
+ 164 FABS                         212                0
+ 165 FADD                         221                0
+ 166 FADDP                       1231                0
+ 167 FBLD                           3                0
+ 168 FBSTP                          3                0
+ 169 FCHS                         178                0
+ 179 FCOMI                         11                0
+ 180 FCOMIP                        17                0
+ 181 FCOMP                          7                0
+ 186 FDIV                         113                0
+ 187 FDIVP                         58                0
+ 188 FDIVR                         10                0
+ 189 FDIVRP                        57                0
+ 190 FEMMS                        131                0
+ 193 FFREEP                         3                0
+ 199 FILD                         236                0
+ 203 FISTP                        185                0
+ 204 FISTTP                         4                0
+ 207 FLD                         3960                0
+ 208 FLD1                         204                0
+ 209 FLDCW                        388                0
+ 210 FLDENV                        17                0
+ 211 FLDL2E                         3                0
+ 212 FLDL2T                         1                0
+ 213 FLDLG2                         2                0
+ 214 FLDLN2                        13                0
+ 215 FLDPI                         12                0
+ 216 FLDZ                         504                0
+ 217 FMUL                        1347                0
+ 218 FMULP                        222                0
+ 219 FNCLEX                         1                0
+ 223 FNSTCW                       190                0
+ 224 FNSTENV                       18                0
+ 225 FNSTSW                       173                0
+ 226 FPATAN                         3                0
+ 227 FPREM                          4                0
+ 228 FPREM1                         1                0
+ 230 FRNDINT                       15                0
+ 232 FSCALE                         7                0
+ 236 FSQRT                         79                0
+ 237 FST                            4                0
+ 238 FSTP                        3866                0
+ 240 FSUB                         134                0
+ 241 FSUBP                        148                0
+ 242 FSUBR                         41                0
+ 243 FSUBRP                       103                0
+ 246 FUCOMI                       610                0
+ 247 FUCOMIP                      461                0
+ 249 FUCOMPP                        1                0
+ 250 FWAIT                         34                0
+ 251 FXAM                         159                0
+ 252 FXCH                        1670                0
+ 257 FXTRACT                        3                0
+ 259 FYL2XP1                        4                0
+ 264 HADDPD                      1157                0
+ 265 HADDPS                       763                0
+ 266 HLT                            7                0
+ 268 HSUBPS                         1                0
+ 269 IDIV                        4455                0
+ 270 IMUL                      117550                0
+ 271 IN                            20                0
+ 272 INC                         9081                0
+ 275 INC_LOCK                      12                0
+ 276 INSB                           2                0
+ 277 INSD                          15                0
+ 281 INT                            5                0
+ 282 INT1                          11                0
+ 292 IRETD                          8                0
+ 294 JB                         12127                0
+ 295 JBE                        32749                0
+ 298 JL                         27628                0
+ 299 JLE                       135813                0
+ 300 JMP                       520341                0
+ 302 JNB                        14926                0
+ 303 JNBE                       37994                0
+ 304 JNL                        27755                0
+ 305 JNLE                       67964                0
+ 306 JNO                           10                0
+ 307 JNP                          344                0
+ 308 JNS                        10592                0
+ 309 JNZ                       326851                0
+ 310 JO                            47                0
+ 311 JP                         11718                0
+ 312 JRCXZ                         13                0
+ 313 JS                         28386                0
+ 314 JZ                        547424                0
+ 315 KADDB                         10                0
+ 327 KMOVB                          4                0
+ 330 KMOVW                          4                0
+ 343 KSHIFTLB                      16                0
+ 358 KXNORB                         6                0
+ 366 LAHF                           2                0
+ 368 LDDQU                        619                0
+ 369 LDMXCSR                       48                0
+ 371 LEA                      1285988                0
+ 372 LEAVE                        172                0
+ 374 LFENCE                        13                0
+ 386 LOOP                           6                0
+ 387 LOOPE                          2                0
+ 388 LOOPNE                         6                0
+ 389 LSL                            1                0
+ 397 MAXPD                       4345                0
+ 398 MAXPS                       2372                0
+ 399 MAXSD                       1321                0
+ 400 MAXSS                       2064                0
+ 401 MFENCE                       107                0
+ 402 MINPD                       4345                0
+ 403 MINPS                       2385                0
+ 404 MINSD                       1120                0
+ 405 MINSS                       1994                0
+ 408 MOV                      5021680                0
+ 409 MOVAPD                    123907                0
+ 410 MOVAPS                    337426                0
+ 412 MOVD                       17732                0
+ 413 MOVDDUP                    47282                0
+ 414 MOVDQ2Q                       64                0
+ 415 MOVDQA                    107389                0
+ 416 MOVDQU                     85528                0
+ 417 MOVHLPS                    11967                0
+ 418 MOVHPD                     17910                0
+ 419 MOVHPS                     91870                0
+ 420 MOVLHPS                      280                0
+ 421 MOVLPD                      9817                0
+ 422 MOVLPS                     21311                0
+ 423 MOVMSKPD                     383                0
+ 424 MOVMSKPS                     379                0
+ 425 MOVNTDQ                       48                0
+ 430 MOVNTQ                        70                0
+ 433 MOVQ                      134162                0
+ 434 MOVQ2DQ                      100                0
+ 435 MOVSB                         57                0
+ 436 MOVSD                          3                0
+ 437 MOVSD_XMM                 494400                0
+ 438 MOVSHDUP                    2011                0
+ 439 MOVSLDUP                    2082                0
+ 441 MOVSS                     577059                0
+ 442 MOVSW                          6                0
+ 443 MOVSX                      30807                0
+ 444 MOVSXD                    126133                0
+ 445 MOVUPD                        45                0
+ 446 MOVUPS                     24635                0
+ 447 MOVZX                     141258                0
+ 450 MPSADBW                        6                0
+ 451 MUL                         1646                0
+ 452 MULPD                     143291                0
+ 453 MULPS                     152465                0
+ 454 MULSD                     102258                0
+ 455 MULSS                      96967                0
+ 459 NEG                        28800                0
+ 461 NOP                       551844                0
+ 470 NOT                        12782                0
+ 472 OR                         39252                0
+ 473 ORPD                        2327                0
+ 474 ORPS                        1666                0
+ 475 OR_LOCK                       41                0
+ 476 OUT                           12                0
+ 477 OUTSB                          6                0
+ 478 OUTSD                         18                0
+ 479 OUTSW                          1                0
+ 480 PABSB                          1                0
+ 481 PABSD                         92                0
+ 482 PABSW                        814                0
+ 483 PACKSSDW                   39669                0
+ 484 PACKSSWB                     435                0
+ 485 PACKUSDW                    2217                0
+ 486 PACKUSWB                   11205                0
+ 487 PADDB                        634                0
+ 488 PADDD                     138380                0
+ 489 PADDQ                        456                0
+ 490 PADDSB                       366                0
+ 491 PADDSW                       898                0
+ 492 PADDUSB                      602                0
+ 493 PADDUSW                      430                0
+ 494 PADDW                      34848                0
+ 495 PALIGNR                     6124                0
+ 496 PAND                        5101                0
+ 497 PANDN                       1119                0
+ 498 PAUSE                         14                0
+ 499 PAVGB                       1237                0
+ 500 PAVGUSB                      188                0
+ 501 PAVGW                        859                0
+ 502 PBLENDVB                      10                0
+ 504 PCLMULQDQ                     60                0
+ 505 PCMPEQB                     2086                0
+ 506 PCMPEQD                      293                0
+ 508 PCMPEQW                      774                0
+ 511 PCMPGTB                      631                0
+ 512 PCMPGTD                      268                0
+ 514 PCMPGTW                      752                0
+ 519 PEXT                          15                0
+ 520 PEXTRB                       317                0
+ 521 PEXTRD                       543                0
+ 523 PEXTRW                       230                0
+ 524 PEXTRW_SSE4                  307                0
+ 525 PF2ID                          4                0
+ 535 PFMUL                          4                0
+ 544 PHADDD                      2602                0
+ 546 PHADDW                       590                0
+ 548 PHSUBD                        24                0
+ 553 PINSRB                      1050                0
+ 554 PINSRD                        48                0
+ 555 PINSRQ                         8                0
+ 556 PINSRW                       600                0
+ 557 PMADDUBSW                  10056                0
+ 558 PMADDWD                   129449                0
+ 560 PMAXSD                         8                0
+ 561 PMAXSW                     16197                0
+ 562 PMAXUB                       156                0
+ 566 PMINSD                         8                0
+ 567 PMINSW                      9873                0
+ 568 PMINUB                       141                0
+ 569 PMINUD                         6                0
+ 570 PMINUW                        15                0
+ 571 PMOVMSKB                      92                0
+ 574 PMOVSXBW                      24                0
+ 576 PMOVSXWD                      38                0
+ 580 PMOVZXBW                    1129                0
+ 582 PMOVZXWD                      45                0
+ 584 PMULDQ                        16                0
+ 585 PMULHRSW                    7841                0
+ 586 PMULHRW                        4                0
+ 587 PMULHUW                       14                0
+ 588 PMULHW                       479                0
+ 589 PMULLD                       258                0
+ 590 PMULLW                      2996                0
+ 591 PMULUDQ                     3671                0
+ 592 POP                       431500                0
+ 595 POPCNT                        12                0
+ 598 POPFQ                          7                0
+ 599 POR                         4526                0
+ 600 PREFETCHNTA                  614                0
+ 601 PREFETCHT0                 22067                0
+ 602 PREFETCHT1                   653                0
+ 603 PREFETCHT2                  1095                0
+ 604 PREFETCHW                   2753                0
+ 606 PREFETCH_EXCLUSIVE             7427                0
+ 608 PSADBW                      6542                0
+ 609 PSHUFB                      4124                0
+ 610 PSHUFD                    183381                0
+ 611 PSHUFHW                     8317                0
+ 612 PSHUFLW                     9473                0
+ 613 PSHUFW                       524                0
+ 614 PSIGNB                         7                0
+ 615 PSIGND                        25                0
+ 616 PSIGNW                       101                0
+ 617 PSLLD                       1668                0
+ 618 PSLLDQ                      1770                0
+ 619 PSLLQ                       1717                0
+ 620 PSLLW                      12066                0
+ 621 PSRAD                      44698                0
+ 622 PSRAW                       9260                0
+ 623 PSRLD                      12019                0
+ 624 PSRLDQ                      3472                0
+ 625 PSRLQ                       2469                0
+ 626 PSRLW                       1212                0
+ 627 PSUBB                        629                0
+ 628 PSUBD                       3483                0
+ 629 PSUBQ                         39                0
+ 630 PSUBSB                       129                0
+ 631 PSUBSW                       235                0
+ 632 PSUBUSB                     2087                0
+ 633 PSUBUSW                      221                0
+ 634 PSUBW                      34149                0
+ 638 PUNPCKHBW                   6078                0
+ 639 PUNPCKHDQ                   2542                0
+ 640 PUNPCKHQDQ                  1394                0
+ 641 PUNPCKHWD                   7073                0
+ 642 PUNPCKLBW                  40256                0
+ 643 PUNPCKLDQ                  12214                0
+ 644 PUNPCKLQDQ                 32772                0
+ 645 PUNPCKLWD                  20620                0
+ 646 PUSH                      647231                0
+ 651 PUSHFQ                        11                0
+ 652 PXOR                       85169                0
+ 653 RCL                            7                0
+ 655 RCPSS                          2                0
+ 656 RCR                           32                0
+ 660 RDPID                          1                0
+ 661 RDPKRU                         2                0
+ 663 RDRAND                         1                0
+ 667 RDTSC                         34                0
+ 703 RET_FAR                       17                0
+ 704 RET_NEAR                  148426                0
+ 705 ROL                         8132                0
+ 706 ROR                         4509                0
+ 707 RORX                         586                0
+ 713 RSQRTPS                        6                0
+ 716 SAHF                           7                0
+ 718 SAR                        76458                0
+ 721 SBB                         4653                0
+ 723 SCASB                          8                0
+ 724 SCASD                          1                0
+ 727 SETB                         927                0
+ 728 SETBE                       1108                0
+ 729 SETL                         846                0
+ 730 SETLE                       1065                0
+ 731 SETNB                       1495                0
+ 732 SETNBE                      2496                0
+ 733 SETNL                        407                0
+ 734 SETNLE                      1945                0
+ 736 SETNP                       2216                0
+ 737 SETNS                          1                0
+ 738 SETNZ                       8237                0
+ 739 SETO                           3                0
+ 740 SETP                        2667                0
+ 741 SETS                           5                0
+ 743 SETZ                       10355                0
+ 744 SFENCE                        13                0
+ 753 SHL                       137444                0
+ 754 SHLD                         893                0
+ 755 SHLX                           3                0
+ 756 SHR                        46533                0
+ 757 SHRD                          45                0
+ 758 SHRX                           3                0
+ 759 SHUFPD                      8379                0
+ 760 SHUFPS                     20096                0
+ 763 SLDT                           1                0
+ 766 SQRTPD                         7                0
+ 767 SQRTPS                         7                0
+ 768 SQRTSD                      2477                0
+ 769 SQRTSS                      1606                0
+ 771 STC                            6                0
+ 772 STD                            3                0
+ 774 STI                            8                0
+ 775 STMXCSR                       79                0
+ 776 STOSB                         13                0
+ 777 STOSD                         10                0
+ 781 SUB                       351107                0
+ 782 SUBPD                      16410                0
+ 783 SUBPS                       9499                0
+ 784 SUBSD                      32909                0
+ 785 SUBSS                      29927                0
+ 786 SUB_LOCK                    1928                0
+ 788 SYSCALL                      593                0
+ 795 TEST                      563939                0
+ 796 TZCNT                        100                0
+ 798 UCOMISD                    29935                0
+ 799 UCOMISS                    19754                0
+ 802 UD2                          308                0
+ 803 UNPCKHPD                    1687                0
+ 804 UNPCKHPS                    1255                0
+ 805 UNPCKLPD                    1843                0
+ 806 UNPCKLPS                    2840                0
+ 811 VADDPD                      2561                0
+ 812 VADDPS                      8901                0
+ 813 VADDSD                      3900                0
+ 814 VADDSS                      1951                0
+ 815 VADDSUBPD                   2322                0
+ 816 VADDSUBPS                   3182                0
+ 820 VAESENCLAST                 1162                0
+ 825 VANDNPD                       13                0
+ 827 VANDPD                       508                0
+ 828 VANDPS                        15                0
+ 831 VBLENDPD                     144                0
+ 832 VBLENDPS                     149                0
+ 834 VBLENDVPS                      2                0
+ 841 VBROADCASTI128              4552                0
+ 847 VBROADCASTSD                4663                0
+ 848 VBROADCASTSS               48751                0
+ 850 VCMPPS                         5                0
+ 851 VCMPSD                         9                0
+ 852 VCMPSS                         2                0
+ 854 VCOMISS                        2                0
+ 857 VCVTDQ2PD                     84                0
+ 858 VCVTDQ2PS                     18                0
+ 865 VCVTPS2DQ                      2                0
+ 867 VCVTPS2PH                      8                0
+ 876 VCVTSI2SD                     13                0
+ 877 VCVTSI2SS                      5                0
+ 881 VCVTTPD2DQ                    30                0
+ 889 VCVTTSD2SI                    19                0
+ 900 VDIVPD                        18                0
+ 901 VDIVPS                         5                0
+ 902 VDIVSD                        48                0
+ 903 VDIVSS                         1                0
+ 912 VEXTRACTF128                 400                0
+ 917 VEXTRACTI128                6501                0
+ 918 VEXTRACTI32X4                  6                0
+ 919 VEXTRACTI32X8                  1                0
+ 922 VEXTRACTPS                    24                0
+ 931 VFMADD213PD                   52                0
+ 932 VFMADD213PS                   52                0
+ 933 VFMADD213SD                    1                0
+ 935 VFMADD231PD                18972                0
+ 936 VFMADD231PS                20790                0
+ 937 VFMADD231SD                  702                0
+ 938 VFMADD231SS                 4794                0
+ 939 VFMADDPD                   21451                0
+ 940 VFMADDPS                   24336                0
+ 941 VFMADDSD                    1573                0
+ 942 VFMADDSS                    4392                0
+ 973 VFMSUBSD                      32                0
+ 983 VFNMADD231PD                8160                0
+ 984 VFNMADD231PS                8980                0
+ 987 VFNMADDPD                   5128                0
+ 988 VFNMADDPS                   6656                0
+ 989 VFNMADDSD                    147                0
+1038 VHADDPD                       65                0
+1039 VHADDPS                      129                0
+1042 VINSERTF128                   43                0
+1047 VINSERTI128                11088                0
+1048 VINSERTI32X4                 120                0
+1054 VLDMXCSR                      14                0
+1059 VMAXPS                         2                0
+1072 VMOVAPD                     4705                0
+1073 VMOVAPS                      958                0
+1074 VMOVD                       1835                0
+1075 VMOVDDUP                   25499                0
+1076 VMOVDQA                    12730                0
+1077 VMOVDQA32                     22                0
+1078 VMOVDQA64                      5                0
+1079 VMOVDQU                    42801                0
+1081 VMOVDQU32                     54                0
+1082 VMOVDQU64                      4                0
+1083 VMOVDQU8                       1                0
+1084 VMOVHLPS                     608                0
+1085 VMOVHPD                      492                0
+1086 VMOVHPS                     2417                0
+1087 VMOVLHPS                      47                0
+1088 VMOVLPD                      336                0
+1089 VMOVLPS                       28                0
+1091 VMOVMSKPS                     24                0
+1092 VMOVNTDQ                      16                0
+1096 VMOVQ                       6158                0
+1097 VMOVSD                     10788                0
+1098 VMOVSHDUP                      6                0
+1099 VMOVSLDUP                      3                0
+1100 VMOVSS                     13757                0
+1102 VMOVUPS                    51733                0
+1103 VMPSADBW                      10                0
+1110 VMULPD                      5040                0
+1111 VMULPS                     14191                0
+1112 VMULSD                      2331                0
+1113 VMULSS                      2320                0
+1117 VORPD                         89                0
+1118 VORPS                          1                0
+1121 VPABSB                       101                0
+1122 VPABSD                        85                0
+1124 VPABSW                      2541                0
+1125 VPACKSSDW                   6063                0
+1126 VPACKSSWB                    174                0
+1127 VPACKUSDW                   1615                0
+1128 VPACKUSWB                   2382                0
+1129 VPADDB                       432                0
+1130 VPADDD                     41002                0
+1131 VPADDQ                       448                0
+1132 VPADDSB                       90                0
+1133 VPADDSW                       62                0
+1134 VPADDUSB                     122                0
+1136 VPADDW                      9159                0
+1137 VPALIGNR                    2247                0
+1138 VPAND                       3977                0
+1140 VPANDN                      1911                0
+1144 VPAVGB                       420                0
+1145 VPAVGW                       480                0
+1146 VPBLENDD                       6                0
+1151 VPBLENDVB                     16                0
+1153 VPBROADCASTB                  22                0
+1154 VPBROADCASTD                1278                0
+1157 VPBROADCASTQ                 600                0
+1158 VPBROADCASTW                 367                0
+1163 VPCMPEQB                     253                0
+1164 VPCMPEQD                     546                0
+1165 VPCMPEQQ                      80                0
+1166 VPCMPEQW                     632                0
+1169 VPCMPGTB                     354                0
+1170 VPCMPGTD                       2                0
+1172 VPCMPGTW                     321                0
+1184 VPCOMPRESSD                    4                0
+1199 VPERM2F128                   192                0
+1200 VPERM2I128                   573                0
+1202 VPERMD                       424                0
+1211 VPERMILPD                    580                0
+1212 VPERMILPS                    566                0
+1213 VPERMPD                      916                0
+1214 VPERMPS                        2                0
+1215 VPERMQ                      4077                0
+1227 VPEXTRB                        8                0
+1228 VPEXTRD                      678                0
+1229 VPEXTRQ                       12                0
+1230 VPEXTRW                      185                0
+1232 VPGATHERDD                   512                0
+1239 VPHADDD                     2154                0
+1240 VPHADDDQ                      17                0
+1243 VPHADDUBQ                      4                0
+1246 VPHADDUWD                     42                0
+1247 VPHADDUWQ                      2                0
+1248 VPHADDW                       86                0
+1250 VPHADDWQ                      30                0
+1251 VPHMINPOSUW                    1                0
+1256 VPHSUBW                        6                0
+1258 VPINSRB                       54                0
+1259 VPINSRD                      166                0
+1261 VPINSRW                      139                0
+1266 VPMACSDQL                      4                0
+1278 VPMADDUBSW                  6875                0
+1279 VPMADDWD                   34535                0
+1283 VPMAXSD                        6                0
+1285 VPMAXSW                     2202                0
+1286 VPMAXUB                        8                0
+1291 VPMINSD                       24                0
+1293 VPMINSW                     2161                0
+1294 VPMINUB                       48                0
+1297 VPMINUW                       54                0
+1306 VPMOVMSKB                     12                0
+1309 VPMOVQD                        6                0
+1319 VPMOVSXBW                    102                0
+1320 VPMOVSXDQ                      1                0
+1321 VPMOVSXWD                     38                0
+1333 VPMOVZXBW                   1343                0
+1335 VPMOVZXWD                    192                0
+1337 VPMULDQ                        8                0
+1338 VPMULHRSW                   3704                0
+1340 VPMULHW                       16                0
+1341 VPMULLD                      143                0
+1343 VPMULLW                      222                0
+1345 VPMULUDQ                     380                0
+1350 VPOR                        2688                0
+1351 VPORD                          2                0
+1353 VPPERM                        12                0
+1366 VPSADBW                     8313                0
+1391 VPSHUFB                     9571                0
+1393 VPSHUFD                      948                0
+1394 VPSHUFHW                      31                0
+1395 VPSHUFLW                     597                0
+1396 VPSIGNB                       12                0
+1397 VPSIGND                       12                0
+1398 VPSIGNW                       87                0
+1399 VPSLLD                      1354                0
+1400 VPSLLDQ                      246                0
+1401 VPSLLQ                       219                0
+1405 VPSLLW                       805                0
+1406 VPSRAD                     11545                0
+1411 VPSRAW                       814                0
+1412 VPSRLD                      5038                0
+1413 VPSRLDQ                     1204                0
+1414 VPSRLQ                       439                0
+1418 VPSRLW                       365                0
+1419 VPSUBB                       261                0
+1420 VPSUBD                      1338                0
+1421 VPSUBQ                       192                0
+1422 VPSUBSB                       20                0
+1424 VPSUBUSB                     580                0
+1425 VPSUBUSW                      71                0
+1426 VPSUBW                      7051                0
+1429 VPTEST                         5                0
+1438 VPUNPCKHBW                  1890                0
+1439 VPUNPCKHDQ                  1571                0
+1440 VPUNPCKHQDQ                 1310                0
+1441 VPUNPCKHWD                 10217                0
+1442 VPUNPCKLBW                  2850                0
+1443 VPUNPCKLDQ                  1594                0
+1444 VPUNPCKLQDQ                 1663                0
+1445 VPUNPCKLWD                 11765                0
+1446 VPXOR                      12782                0
+1447 VPXORD                         1                0
+1503 VSHUFI32X4                     4                0
+1505 VSHUFPD                     2366                0
+1506 VSHUFPS                     3226                0
+1509 VSQRTSD                        2                0
+1511 VSTMXCSR                      14                0
+1512 VSUBPD                       176                0
+1513 VSUBPS                      2572                0
+1514 VSUBSD                      1873                0
+1518 VUCOMISD                     440                0
+1520 VUNPCKHPD                    158                0
+1521 VUNPCKHPS                     20                0
+1522 VUNPCKLPD                    196                0
+1523 VUNPCKLPS                     21                0
+1524 VXORPD                      1152                0
+1525 VXORPS                       460                0
+1526 VZEROALL                    1731                0
+1527 VZEROUPPER                  2972                0
+1533 WRPKRU                         1                0
+1538 XABORT                         6                0
+1540 XADD_LOCK                    192                0
+1541 XBEGIN                         5                0
+1542 XCHG                         357                0
+1543 XEND                           2                0
+1544 XGETBV                         8                0
+1545 XLAT                           1                0
+1546 XOR                       457053                0
+1547 XORPD                      11629                0
+1548 XORPS                      26570                0
+3000 *total                  19729344                0
+3001 *mem-atomic                 4439                0
+3002 *stack-read              2090541              991
+3003 *stack-write             2504572                0
+3004 *iprel-read               269108               52
+3005 *iprel-write               10069                0
+3007 *mem-read-1               148403             3327
+3008 *mem-read-2                63261               66
+3010 *mem-read-4               968455             2316
+3014 *mem-read-8              2942347              997
+3016 *mem-read-10                1958                0
+3022 *mem-read-16              514968                0
+3026 *mem-read-20                   8                0
+3034 *mem-read-28                  17                0
+3038 *mem-read-32               65237                0
+3070 *mem-read-64               34626                0
+3519 *mem-write-1               78996              347
+3520 *mem-write-2               31698                0
+3522 *mem-write-4              650686              340
+3526 *mem-write-8             2567906             2276
+3528 *mem-write-10               1161                0
+3534 *mem-write-16             148400                0
+3546 *mem-write-28                 18                0
+3550 *mem-write-32              11146                0
+
+#
+# $dynamic-counts
+#
+#     opcode       count-unpredicated    count-predicated
+#
+   5 ADC                           12                0
+   8 ADD                     14731572                0
+  11 ADDSD                    2390838                0
+  12 ADDSS                     132039                0
+  15 ADD_LOCK                     490                0
+  23 AND                     13331951                0
+  25 ANDNPD                     98306                0
+  26 ANDNPS                     65544                0
+  27 ANDPD                     262387                0
+  28 ANDPS                     131088                0
+  55 BSF                      1517536                0
+  56 BSR                          542                0
+  57 BSWAP                       8862                0
+  58 BT                          1278                0
+  64 BTS_LOCK                       4                0
+  67 CALL_NEAR                4703412                0
+  70 CDQE                      641165                0
+  73 CLD                            1                0
+  83 CMOVB                          0            73744
+  84 CMOVBE                         0            18403
+  85 CMOVL                          0              116
+  86 CMOVLE                         0               39
+  87 CMOVNB                         0             2269
+  88 CMOVNBE                        0           128423
+  89 CMOVNL                         0             3891
+  90 CMOVNLE                        0             8120
+  93 CMOVNS                         0              113
+  94 CMOVNZ                         0            14138
+  97 CMOVS                          0              223
+  98 CMOVZ                          0           140785
+  99 CMP                     25881766                0
+ 102 CMPSB                          0             2564
+ 104 CMPSD_XMM                  98304                0
+ 106 CMPSS                      65544                0
+ 108 CMPXCHG                       38                0
+ 113 CMPXCHG_LOCK              140480                0
+ 116 CPUID                         51                0
+ 117 CQO                            2                0
+ 130 CVTSD2SS                   66305                0
+ 131 CVTSI2SD                  327693                0
+ 132 CVTSI2SS                   74593                0
+ 133 CVTSS2SD                  131879                0
+ 134 CVTSS2SI                   86016                0
+ 139 CVTTSD2SI                 196608                0
+ 140 CVTTSS2SI                 131088                0
+ 145 DEC                          762                0
+ 146 DEC_LOCK                   91784                0
+ 147 DIV                       194889                0
+ 150 DIVSD                    1309919                0
+ 151 DIVSS                       8224                0
+ 269 IDIV                           2                0
+ 270 IMUL                       29282                0
+ 272 INC                         2684                0
+ 275 INC_LOCK                       4                0
+ 294 JB                       1210745                0
+ 295 JBE                      4034249                0
+ 298 JL                        209790                0
+ 299 JLE                       287472                0
+ 300 JMP                      4489880                0
+ 302 JNB                       918725                0
+ 303 JNBE                     6205580                0
+ 304 JNL                       224702                0
+ 305 JNLE                     1670500                0
+ 308 JNS                        15738                0
+ 309 JNZ                     17942426                0
+ 310 JO                            90                0
+ 311 JP                        372258                0
+ 313 JS                        108934                0
+ 314 JZ                      28894912                0
+ 371 LEA                      7019988                0
+ 372 LEAVE                        242                0
+ 374 LFENCE                         5                0
+ 401 MFENCE                        98                0
+ 408 MOV                     98745779                0
+ 409 MOVAPD                   4193414                0
+ 410 MOVAPS                    632187                0
+ 411 MOVBE                      13868                0
+ 412 MOVD                        2628                0
+ 415 MOVDQA                    846933                0
+ 416 MOVDQU                     98759                0
+ 418 MOVHPD                   2331708                0
+ 419 MOVHPS                     32655                0
+ 421 MOVLPD                   2331708                0
+ 433 MOVQ                       32928                0
+ 435 MOVSB                          0           442013
+ 437 MOVSD_XMM                3379608                0
+ 440 MOVSQ                          0               26
+ 441 MOVSS                     805612                0
+ 443 MOVSX                     806260                0
+ 444 MOVSXD                   2359600                0
+ 446 MOVUPS                     53326                0
+ 447 MOVZX                    7320985                0
+ 451 MUL                          227                0
+ 454 MULSD                    5046359                0
+ 455 MULSS                     311945                0
+ 459 NEG                       470318                0
+ 461 NOP                      1662042                0
+ 470 NOT                       114899                0
+ 472 OR                        625090                0
+ 473 ORPD                       98394                0
+ 474 ORPS                       65544                0
+ 475 OR_LOCK                        7                0
+ 488 PADDD                         62                0
+ 489 PADDQ                        125                0
+ 505 PCMPEQB                  3121974                0
+ 506 PCMPEQD                        1                0
+ 512 PCMPGTD                       31                0
+ 515 PCMPISTRI                   9507                0
+ 568 PMINUB                     27926                0
+ 571 PMOVMSKB                 1562852                0
+ 592 POP                      6024968                0
+ 595 POPCNT                         2                0
+ 599 POR                        46432                0
+ 609 PSHUFB                      7239                0
+ 610 PSHUFD                      2454                0
+ 617 PSLLD                         31                0
+ 618 PSLLDQ                    355815                0
+ 619 PSLLQ                         62                0
+ 624 PSRLDQ                     43584                0
+ 627 PSUBB                    1528335                0
+ 639 PUNPCKHDQ                     31                0
+ 640 PUNPCKHQDQ                    62                0
+ 642 PUNPCKLBW                   2454                0
+ 643 PUNPCKLDQ                     31                0
+ 644 PUNPCKLQDQ                    66                0
+ 645 PUNPCKLWD                   2454                0
+ 646 PUSH                     6231074                0
+ 652 PXOR                     2184452                0
+ 667 RDTSC                      19333                0
+ 704 RET_NEAR                 4703147                0
+ 705 ROL                        68806                0
+ 706 ROR                        42464                0
+ 718 SAR                       690606                0
+ 721 SBB                         4304                0
+ 723 SCASB                          0              289
+ 727 SETB                      100101                0
+ 728 SETBE                      18439                0
+ 729 SETL                          82                0
+ 730 SETLE                       3206                0
+ 732 SETNBE                    159446                0
+ 733 SETNL                      70752                0
+ 734 SETNLE                       465                0
+ 738 SETNZ                     328732                0
+ 743 SETZ                      155923                0
+ 753 SHL                      1774605                0
+ 756 SHR                     10533442                0
+ 768 SQRTSD                     98301                0
+ 775 STMXCSR                       31                0
+ 776 STOSB                          0           256292
+ 777 STOSD                          0               20
+ 778 STOSQ                          0            13588
+ 781 SUB                      6732179                0
+ 784 SUBSD                     459397                0
+ 785 SUBSS                      74241                0
+ 786 SUB_LOCK                     653                0
+ 788 SYSCALL                    23085                0
+ 795 TEST                    30520364                0
+ 796 TZCNT                     136728                0
+ 798 UCOMISD                  1342591                0
+ 799 UCOMISS                   196664                0
+ 813 VADDSD                   1968021                0
+ 825 VANDNPD                   128483                0
+ 827 VANDPD                   1177406                0
+ 929 VFMADD132SD              1380977                0
+ 933 VFMADD213SD               560956                0
+ 937 VFMADD231SD               478458                0
+ 953 VFMSUB132SD                 2420                0
+ 961 VFMSUB231SD                23458                0
+ 977 VFNMADD132SD             1348957                0
+ 981 VFNMADD213SD               58271                0
+ 985 VFNMADD231SD              391531                0
+1072 VMOVAPD                  2975897                0
+1073 VMOVAPS                   171987                0
+1074 VMOVD                      43433                0
+1076 VMOVDQA                   134702                0
+1079 VMOVDQU                   388012                0
+1096 VMOVQ                    1785044                0
+1097 VMOVSD                   5304089                0
+1102 VMOVUPS                      117                0
+1112 VMULSD                   1655168                0
+1117 VORPD                     468412                0
+1137 VPALIGNR                    4956                0
+1138 VPAND                      69174                0
+1140 VPANDN                     69174                0
+1153 VPBROADCASTB               43578                0
+1163 VPCMPEQB                  289715                0
+1169 VPCMPGTB                  138348                0
+1173 VPCMPISTRI                  5280                0
+1294 VPMINUB                    16101                0
+1306 VPMOVMSKB                 247037                0
+1350 VPOR                       82548                0
+1400 VPSLLDQ                     8795                0
+1413 VPSRLDQ                       26                0
+1419 VPSUBB                     29333                0
+1446 VPXOR                     164868                0
+1511 VSTMXCSR                  360981                0
+1514 VSUBSD                   1734525                0
+1518 VUCOMISD                  863465                0
+1524 VXORPD                    683787                0
+1527 VZEROUPPER                174353                0
+1540 XADD_LOCK                   1529                0
+1542 XCHG                      861084                0
+1544 XGETBV                         6                0
+1546 XOR                      5405843                0
+1547 XORPD                        113                0
+1548 XORPS                        279                0
+1550 XRSTOR                       275                0
+1554 XSAVE                        275                0
+3000 *total                 383955419          1105056
+3001 *mem-atomic               235664                0
+3002 *stack-read             32942437                0
+3003 *stack-write            23077362                0
+3004 *iprel-read             13107859                0
+3005 *iprel-write               58194                0
+3007 *mem-read-1             11967869                0
+3008 *mem-read-2              1980023                0
+3010 *mem-read-4             16189951                0
+3014 *mem-read-8             76907055                0
+3022 *mem-read-16             1554882                0
+3038 *mem-read-32              259095                0
+3519 *mem-write-1             1541621                0
+3520 *mem-write-2              917892                0
+3522 *mem-write-4             2660964                0
+3526 *mem-write-8            22625578                0
+3534 *mem-write-16             550346                0
+3550 *mem-write-32              37720                0
+3582 *mem-write-64                550                0
+4094 LAST                         275                0
+# $eof

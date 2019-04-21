@@ -1,0 +1,46 @@
+#
+#pattern-type count percent
+#
+All Threads
+MEM_RW               926002	    0.2406
+MEM_R             107905362	     28.03
+MEM_W              27401894	     7.119
+NO_MEM            248668445	     64.61
+NO_MEM_LIES               0	     0.000
+
+Thread 0
+MEM_RW               850853	    0.2219
+MEM_R             107523875	     28.05
+MEM_W              27306043	     7.122
+NO_MEM            247698492	     64.61
+NO_MEM_LIES               0	     0.000
+
+Thread 1
+MEM_RW                13832	     4.796
+MEM_R                 72658	     25.19
+MEM_W                 18345	     6.361
+NO_MEM               183575	     63.65
+NO_MEM_LIES               0	     0.000
+
+Thread 2
+MEM_RW                30413	     4.997
+MEM_R                152143	     25.00
+MEM_W                 38126	     6.265
+NO_MEM               387891	     63.74
+NO_MEM_LIES               0	     0.000
+
+Thread 3
+MEM_RW                30876	     4.997
+MEM_R                154449	     25.00
+MEM_W                 38705	     6.265
+NO_MEM               393802	     63.74
+NO_MEM_LIES               0	     0.000
+
+Thread 4
+MEM_RW                   28	    0.3672
+MEM_R                  2237	     29.34
+MEM_W                   675	     8.852
+NO_MEM                 4685	     61.44
+NO_MEM_LIES               0	     0.000
+
+# eof
