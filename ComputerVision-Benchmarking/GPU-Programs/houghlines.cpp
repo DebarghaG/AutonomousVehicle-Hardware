@@ -81,10 +81,10 @@ int main(int argc, const char* argv[])
         line(dst_gpu, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 3, LINE_AA);
     }
 
-    imshow("source", src);
-    imshow("detected lines [CPU]", dst_cpu);
-    imshow("detected lines [GPU]", dst_gpu);
-    waitKey();
+    //imshow("source", src);
+    //imshow("detected lines [CPU]", dst_cpu);
+    //imshow("detected lines [GPU]", dst_gpu);
+    //waitKey();
 
     return 0;
 }
