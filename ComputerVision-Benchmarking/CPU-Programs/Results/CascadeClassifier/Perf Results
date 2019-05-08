@@ -1,0 +1,55 @@
+perf stat -d timeout 10s ./cascadeclassifier
+
+ Performance counter stats for 'timeout 10s ./cascadeclassifier':
+
+      15368.422791      task-clock (msec)         #    1.531 CPUs utilized
+          3,15,759      context-switches          #    0.021 M/sec
+             2,455      cpu-migrations            #    0.160 K/sec
+            16,325      page-faults               #    0.001 M/sec
+   37,17,52,08,911      cycles                    #    2.419 GHz                      (49.24%)
+   54,72,97,45,526      instructions              #    1.47  insn per cycle           (61.69%)
+    4,56,92,05,189      branches                  #  297.311 M/sec                    (61.90%)
+       3,84,84,418      branch-misses             #    0.84% of all branches          (61.92%)
+   20,88,25,53,343      L1-dcache-loads           # 1358.796 M/sec                    (62.53%)
+      37,11,02,309      L1-dcache-load-misses     #    1.78% of all L1-dcache hits    (63.07%)
+       3,29,79,844      LLC-loads                 #    2.146 M/sec                    (50.60%)
+         68,41,697      LLC-load-misses           #   20.75% of all LL-cache hits     (50.74%)
+
+      10.037922370 seconds time elapsed
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./cascadeclassifier
+
+ Performance counter stats for 'timeout 10s ./cascadeclassifier':
+
+   21,49,01,66,086      L1-dcache-loads
+      37,30,67,687      L1-dcache-load-misses     #    1.74% of all L1-dcache hits
+    3,50,31,36,333      L1-dcache-stores
+
+      10.040541723 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./cascadeclassifier
+
+ Performance counter stats for 'timeout 10s ./cascadeclassifier':
+
+   21,60,49,37,692      dTLB-loads
+         28,48,826      dTLB-load-misses          #    0.01% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+      10.037517161 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./cascadeclassifier
+
+ Performance counter stats for 'timeout 10s ./cascadeclassifier':
+
+       2,26,67,208      LLC-loads                                                     (66.79%)
+         38,26,062      LLC-load-misses           #   16.88% of all LL-cache hits     (66.86%)
+       1,10,62,811      LLC-stores                                                    (66.35%)
+   <not supported>      LLC-prefetches
+
+      10.035696264 seconds time elapsed

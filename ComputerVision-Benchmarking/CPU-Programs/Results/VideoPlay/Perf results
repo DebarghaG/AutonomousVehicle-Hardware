@@ -1,0 +1,53 @@
+perf stat -d timeout 10s ./video_player
+
+ Performance counter stats for 'timeout 10s ./video_player':
+
+       2290.673483      task-clock (msec)         #    0.228 CPUs utilized
+             2,218      context-switches          #    0.968 K/sec
+               405      cpu-migrations            #    0.177 K/sec
+            15,998      page-faults               #    0.007 M/sec
+    4,83,47,53,401      cycles                    #    2.111 GHz                      (50.25%)
+    6,29,17,92,380      instructions              #    1.30  insn per cycle           (61.95%)
+      63,38,57,876      branches                  #  276.712 M/sec                    (59.70%)
+       1,12,61,453      branch-misses             #    1.78% of all branches          (59.89%)
+    1,82,83,72,571      L1-dcache-loads           #  798.181 M/sec                    (61.74%)
+      10,14,82,125      L1-dcache-load-misses     #    5.55% of all L1-dcache hits    (63.30%)
+       1,81,04,716      LLC-loads                 #    7.904 M/sec                    (53.30%)
+         46,90,501      LLC-load-misses           #   25.91% of all LL-cache hits     (51.83%)
+
+      10.031057384 seconds time elapsed
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./video_player
+
+ Performance counter stats for 'timeout 10s ./video_player':
+
+    1,79,03,52,668      L1-dcache-loads
+      10,45,90,948      L1-dcache-load-misses     #    5.84% of all L1-dcache hits
+    1,06,18,10,037      L1-dcache-stores
+
+      10.033856715 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./video_player
+
+
+ Performance counter stats for 'timeout 10s ./video_player':
+
+    1,79,55,95,651      dTLB-loads
+         13,71,715      dTLB-load-misses          #    0.08% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+      10.039517107 seconds time elapsed
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./video_player
+
+ Performance counter stats for 'timeout 10s ./video_player':
+
+       1,86,93,426      LLC-loads                                                     (66.62%)
+         45,72,809      LLC-load-misses           #   24.46% of all LL-cache hits     (66.37%)
+       1,10,67,102      LLC-stores                                                    (67.01%)
+   <not supported>      LLC-prefetches
+
+      10.037485735 seconds time elapsed

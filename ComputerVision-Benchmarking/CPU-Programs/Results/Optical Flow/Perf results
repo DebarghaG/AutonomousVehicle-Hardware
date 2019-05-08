@@ -1,0 +1,105 @@
+perf stat -d timeout 10s ./pyrlk_optical_flow
+This is a demo of Lukas-Kanade optical flow lkdemo(),
+Using OpenCV version 3.2.0
+
+It uses camera by default, but you can provide a path to video as an argument.
+
+Hot keys:
+	ESC - quit the program
+	r - auto-initialize tracking
+	rc - delete all the points
+	n - switch the "night" mode on/off
+To add/remove a feature point click it
+
+rrr
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow':
+
+       4980.324662      task-clock (msec)         #    0.496 CPUs utilized
+          1,03,416      context-switches          #    0.021 M/sec
+             1,075      cpu-migrations            #    0.216 K/sec
+            17,032      page-faults               #    0.003 M/sec
+   10,39,99,21,171      cycles                    #    2.088 GHz                      (49.73%)
+   15,72,97,87,390      instructions              #    1.51  insn per cycle           (61.85%)
+    1,36,27,60,203      branches                  #  273.629 M/sec                    (62.47%)
+       1,88,23,909      branch-misses             #    1.38% of all branches          (62.96%)
+    4,09,91,65,559      L1-dcache-loads           #  823.072 M/sec                    (63.45%)
+      15,96,57,534      L1-dcache-load-misses     #    3.89% of all L1-dcache hits    (62.54%)
+       2,45,53,060      LLC-loads                 #    4.930 M/sec                    (49.99%)
+         53,72,439      LLC-load-misses           #   21.88% of all LL-cache hits     (48.86%)
+
+      10.033673012 seconds time elapsed
+
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./pyrlk_optical_flow
+This is a demo of Lukas-Kanade optical flow lkdemo(),
+Using OpenCV version 3.2.0
+
+It uses camera by default, but you can provide a path to video as an argument.
+
+Hot keys:
+	ESC - quit the program
+	r - auto-initialize tracking
+	c - delete all the points
+	n - switch the "night" mode on/off
+To add/remove a feature point click it
+
+rrr
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow':
+
+    3,81,52,47,125      L1-dcache-loads
+      15,37,94,188      L1-dcache-load-misses     #    4.03% of all L1-dcache hits
+    1,69,75,56,110      L1-dcache-stores
+
+      10.037376752 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./pyrlk_optical_flow
+
+This is a demo of Lukas-Kanade optical flow lkdemo(),
+Using OpenCV version 3.2.0
+
+It uses camera by default, but you can provide a path to video as an argument.
+
+Hot keys:
+	ESC - quit the program
+	r - auto-initialize tracking
+	c - delete all the points
+	n - switch the "night" mode on/off
+To add/remove a feature point click it
+
+rr
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow':
+
+    4,62,30,91,754      dTLB-loads
+         18,81,163      dTLB-load-misses          #    0.04% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+      10.038231256 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./pyrlk_optical_flow
+This is a demo of Lukas-Kanade optical flow lkdemo(),
+Using OpenCV version 3.2.0
+
+It uses camera by default, but you can provide a path to video as an argument.
+
+Hot keys:
+	ESC - quit the program
+	r - auto-initialize tracking
+	c - delete all the points
+	n - switch the "night" mode on/off
+To add/remove a feature point click it
+
+
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow':
+
+       2,43,66,177      LLC-loads                                                     (66.62%)
+         47,14,012      LLC-load-misses           #   19.35% of all LL-cache hits     (66.71%)
+       2,45,67,761      LLC-stores                                                    (66.67%)
+   <not supported>      LLC-prefetches
+
+      10.036946014 seconds time elapsed

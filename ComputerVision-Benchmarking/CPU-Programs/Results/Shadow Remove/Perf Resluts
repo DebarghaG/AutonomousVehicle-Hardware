@@ -1,0 +1,55 @@
+perf stat -d timeout 1s ./shadow_remove
+
+ Performance counter stats for 'timeout 1s ./shadow_remove':
+
+        465.455205      task-clock (msec)         #    1.512 CPUs utilized
+               773      context-switches          #    0.002 M/sec
+                16      cpu-migrations            #    0.034 K/sec
+             8,562      page-faults               #    0.018 M/sec
+    1,15,00,37,978      cycles                    #    2.471 GHz                      (51.48%)
+      88,87,37,210      instructions              #    0.77  insn per cycle           (62.30%)
+      15,04,73,700      branches                  #  323.283 M/sec                    (59.92%)
+         25,78,999      branch-misses             #    1.71% of all branches          (61.20%)
+      24,29,93,884      L1-dcache-loads           #  522.056 M/sec                    (61.87%)
+       1,40,46,579      L1-dcache-load-misses     #    5.78% of all L1-dcache hits    (62.38%)
+         19,18,518      LLC-loads                 #    4.122 M/sec                    (52.12%)
+          5,46,796      LLC-load-misses           #   28.50% of all LL-cache hits     (51.04%)
+
+       0.307918104 seconds time elapsed
+
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./shadow_remove
+
+ Performance counter stats for 'timeout 1s ./shadow_remove':
+
+      31,34,55,504      L1-dcache-loads
+       1,25,33,269      L1-dcache-load-misses     #    4.00% of all L1-dcache hits
+      17,16,72,230      L1-dcache-stores
+
+       0.280348868 seconds time elapsed
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./shadow_remove
+
+ Performance counter stats for 'timeout 1s ./shadow_remove':
+
+      28,44,07,846      dTLB-loads
+          1,91,341      dTLB-load-misses          #    0.07% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       0.252912757 seconds time elapsed
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./shadow_remove
+
+
+ Performance counter stats for 'timeout 1s ./shadow_remove':
+
+         21,55,917      LLC-loads                                                     (66.60%)
+          5,24,335      LLC-load-misses           #   24.32% of all LL-cache hits     (67.28%)
+         13,03,697      LLC-stores                                                    (66.12%)
+   <not supported>      LLC-prefetches
+
+       0.282482204 seconds time elapsed

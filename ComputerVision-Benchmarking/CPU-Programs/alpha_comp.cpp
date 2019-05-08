@@ -13,9 +13,10 @@ int main( void )
    cout << " Simple Linear Blender " << endl;
    cout << "-----------------------" << endl;
    cout << "* Enter alpha [0.0-1.0]: ";
-   cin >> input;
+   //cin >> input;
    // We use the alpha provided by the user if it is between 0 and 1
-   if( input >= 0 && input <= 1 )
+	input = 1000.0;   
+	if( input >= 0 && input <= 1 )
      { alpha = input; }
    src1 = imread( "pic1.jpg" );
    src2 = imread( "pic2.jpg" );

@@ -1,0 +1,53 @@
+perf stat -d timeout 1s ./bgfg_segm
+
+ Performance counter stats for 'timeout 1s ./bgfg_segm':
+
+        555.806196      task-clock (msec)         #    1.940 CPUs utilized
+             1,260      context-switches          #    0.002 M/sec
+                16      cpu-migrations            #    0.029 K/sec
+             8,554      page-faults               #    0.015 M/sec
+    1,38,15,24,737      cycles                    #    2.486 GHz                      (49.34%)
+      93,80,72,265      instructions              #    0.68  insn per cycle           (60.72%)
+      17,72,44,024      branches                  #  318.895 M/sec                    (60.46%)
+         32,49,964      branch-misses             #    1.83% of all branches          (60.38%)
+      28,31,81,637      L1-dcache-loads           #  509.497 M/sec                    (61.74%)
+       1,22,16,500      L1-dcache-load-misses     #    4.31% of all L1-dcache hits    (64.02%)
+         19,71,251      LLC-loads                 #    3.547 M/sec                    (52.24%)
+          5,51,736      LLC-load-misses           #   27.99% of all LL-cache hits     (51.83%)
+
+       0.286497960 seconds time elapsed
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./bgfg_segm
+
+ Performance counter stats for 'timeout 1s ./bgfg_segm':
+
+      27,73,41,388      L1-dcache-loads
+       1,32,62,828      L1-dcache-load-misses     #    4.78% of all L1-dcache hits
+      14,98,59,075      L1-dcache-stores
+
+       0.283306439 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./bgfg_segm
+
+ Performance counter stats for 'timeout 1s ./bgfg_segm':
+
+      27,27,19,635      dTLB-loads
+          2,10,092      dTLB-load-misses          #    0.08% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       0.264545318 seconds time elapsed
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./bgfg_segm
+
+ Performance counter stats for 'timeout 1s ./bgfg_segm':
+
+         22,23,746      LLC-loads                                                     (64.84%)
+          5,44,322      LLC-load-misses           #   24.48% of all LL-cache hits     (66.14%)
+         15,41,608      LLC-stores                                                    (69.01%)
+   <not supported>      LLC-prefetches
+
+       0.283842283 seconds time elapsed

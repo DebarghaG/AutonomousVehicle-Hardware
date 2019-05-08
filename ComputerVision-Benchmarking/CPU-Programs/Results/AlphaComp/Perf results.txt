@@ -1,0 +1,68 @@
+perf stat -d timeout 1s ./alpha_comp
+ Simple Linear Blender
+-----------------------
+
+ Performance counter stats for 'timeout 1s ./alpha_comp':
+
+        606.889097      task-clock (msec)         #    0.583 CPUs utilized
+               699      context-switches          #    0.001 M/sec
+                39      cpu-migrations            #    0.064 K/sec
+            10,013      page-faults               #    0.016 M/sec
+    1,51,12,03,304      cycles                    #    2.490 GHz                      (47.17%)
+    1,04,67,52,746      instructions              #    0.69  insn per cycle           (62.19%)
+      21,20,29,500      branches                  #  349.371 M/sec                    (63.65%)
+         39,58,085      branch-misses             #    1.87% of all branches          (64.78%)
+      31,89,20,601      L1-dcache-loads           #  525.501 M/sec                    (65.78%)
+       2,04,31,708      L1-dcache-load-misses     #    6.41% of all L1-dcache hits    (64.77%)
+         39,81,911      LLC-loads                 #    6.561 M/sec                    (47.72%)
+          7,79,880      LLC-load-misses           #   19.59% of all LL-cache hits     (46.14%)
+
+       1.041494392 seconds time elapsed
+
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./alpha_comp
+ Simple Linear Blender
+-----------------------
+
+ Performance counter stats for 'timeout 1s ./alpha_comp':
+
+      31,04,05,115      L1-dcache-loads
+       1,99,07,458      L1-dcache-load-misses     #    6.41% of all L1-dcache hits
+      16,26,83,030      L1-dcache-stores
+
+       1.035593917 seconds time elapsed
+
+
+
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./alpha_comp
+ Simple Linear Blender
+-----------------------
+
+ Performance counter stats for 'timeout 1s ./alpha_comp':
+
+      31,48,91,361      dTLB-loads
+          3,02,194      dTLB-load-misses          #    0.10% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       1.043721140 seconds time elapsed
+
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./alpha_comp
+ Simple Linear Blender
+-----------------------
+
+ Performance counter stats for 'timeout 1s ./alpha_comp':
+
+         46,14,555      LLC-loads                                                     (64.45%)
+          7,40,944      LLC-load-misses           #   16.06% of all LL-cache hits     (67.81%)
+         16,01,650      LLC-stores                                                    (67.74%)
+   <not supported>      LLC-prefetches
+
+       1.037342539 seconds time elapsed
