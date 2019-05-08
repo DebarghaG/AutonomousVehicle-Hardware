@@ -33,7 +33,7 @@ static void onMouse( int event, int x, int y, int /*flags*/, void* /*param*/ )
 }
 int main( int argc, char** argv )
 {
-    VideoCapture cap;
+    
     TermCriteria termcrit(TermCriteria::COUNT|TermCriteria::EPS,20,0.03);
     Size subPixWinSize(10,10), winSize(31,31);
     const int MAX_COUNT = 500;
@@ -42,6 +42,7 @@ int main( int argc, char** argv )
     help();
     cv::CommandLineParser parser(argc, argv, "{@input|0|}");
     string input = parser.get<string>("@input");
+	VideoCapture cap();
     if( input.size() == 1 && isdigit(input[0]) )
         cap.open(input[0] - '0');
     else

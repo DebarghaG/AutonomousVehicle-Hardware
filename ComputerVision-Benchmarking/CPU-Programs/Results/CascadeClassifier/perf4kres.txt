@@ -1,0 +1,51 @@
+perf stat -d timeout 10s ./cascade4k
+Performance counter stats for 'timeout 10s ./cascade4k':
+
+     28543.067763      task-clock (msec)         #    2.840 CPUs utilized
+           24,318      context-switches          #    0.852 K/sec
+              359      cpu-migrations            #    0.013 K/sec
+         1,19,705      page-faults               #    0.004 M/sec
+  70,86,14,76,087      cycles                    #    2.483 GHz                      (49.90%)
+1,04,27,30,81,635      instructions              #    1.47  insn per cycle           (62.49%)
+   5,56,73,33,020      branches                  #  195.050 M/sec                    (62.49%)
+      1,82,60,910      branch-misses             #    0.33% of all branches          (62.50%)
+  45,68,65,45,693      L1-dcache-loads           # 1600.618 M/sec                    (62.58%)
+     97,08,60,338      L1-dcache-load-misses     #    2.13% of all L1-dcache hits    (62.54%)
+      3,65,21,049      LLC-loads                 #    1.280 M/sec                    (50.06%)
+      1,05,35,001      LLC-load-misses           #   28.85% of all LL-cache hits     (49.93%)
+
+     10.049082970 seconds time elapsed
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./cascade4k
+Performance counter stats for 'timeout 10s ./cascade4k':
+
+  45,78,87,54,150      L1-dcache-loads
+     97,03,83,507      L1-dcache-load-misses     #    2.12% of all L1-dcache hits
+   2,07,87,68,374      L1-dcache-stores
+
+     10.052089441 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./cascade4k
+Performance counter stats for 'timeout 10s ./cascade4k':
+
+  45,07,71,59,058      dTLB-loads
+        38,18,600      dTLB-load-misses          #    0.01% of all dTLB cache hits
+  <not supported>      dTLB-prefetch-misses
+
+     10.052179759 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./cascade4k
+Performance counter stats for 'timeout 10s ./cascade4k':
+
+      3,62,49,784      LLC-loads                                                     (66.83%)
+        98,62,410      LLC-load-misses           #   27.21% of all LL-cache hits     (66.72%)
+      1,62,39,236      LLC-stores                                                    (66.45%)
+  <not supported>      LLC-prefetches
+
+     10.055941216 seconds time elapsed

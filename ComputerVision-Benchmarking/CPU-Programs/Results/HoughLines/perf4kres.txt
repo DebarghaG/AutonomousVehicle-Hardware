@@ -1,0 +1,48 @@
+perf stat -d timeout 1s ./houghlines4k
+ Performance counter stats for 'timeout 1s ./houghlines4k':
+
+       1337.484032      task-clock (msec)         #    1.254 CPUs utilized
+               702      context-switches          #    0.525 K/sec
+                36      cpu-migrations            #    0.027 K/sec
+          1,39,214      page-faults               #    0.104 M/sec
+    3,33,19,29,023      cycles                    #    2.491 GHz                      (51.21%)
+    3,47,24,87,092      instructions              #    1.04  insn per cycle           (63.40%)
+      49,78,61,123      branches                  #  372.237 M/sec                    (61.89%)
+         64,73,417      branch-misses             #    1.30% of all branches          (62.00%)
+      84,96,34,280      L1-dcache-loads           #  635.248 M/sec                    (61.92%)
+       5,63,31,366      L1-dcache-load-misses     #    6.63% of all L1-dcache hits    (61.90%)
+         70,46,594      LLC-loads                 #    5.269 M/sec                    (50.78%)
+         10,82,093      LLC-load-misses           #   15.36% of all LL-cache hits     (50.30%)
+
+       1.066199803 seconds time elapsed
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./houghlines4k
+ Performance counter stats for 'timeout 1s ./houghlines4k':
+
+      84,83,63,437      L1-dcache-loads
+       6,02,20,551      L1-dcache-load-misses     #    7.10% of all L1-dcache hits
+      68,24,69,494      L1-dcache-stores
+
+       1.066436083 seconds time elapsed
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./houghlines4k
+ Performance counter stats for 'timeout 1s ./houghlines4k':
+
+      79,51,57,865      dTLB-loads
+          3,75,932      dTLB-load-misses          #    0.05% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       1.065841884 seconds time elapsed
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./houghlines4k
+ Performance counter stats for 'timeout 1s ./houghlines4k':
+
+         66,31,788      LLC-loads                                                     (65.89%)
+         10,05,807      LLC-load-misses           #   15.17% of all LL-cache hits     (66.98%)
+       1,21,06,593      LLC-stores                                                    (67.13%)
+   <not supported>      LLC-prefetches
+
+       1.080794580 seconds time elapsed

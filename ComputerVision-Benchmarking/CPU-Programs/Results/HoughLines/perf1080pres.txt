@@ -1,0 +1,73 @@
+perf stat -d timeout 1s ./houghlines1080p
+This program demonstrates line finding with the Hough transform.
+Usage:
+./houghlines <image_name>, Default is pic1.jpg
+
+can not open 1080p1.jpg
+
+ Performance counter stats for 'timeout 1s ./houghlines1080p':
+
+        168.673935      task-clock (msec)         #    1.703 CPUs utilized
+            13,193      context-switches          #    0.078 M/sec
+                 7      cpu-migrations            #    0.042 K/sec
+             4,013      page-faults               #    0.024 M/sec
+      41,88,76,933      cycles                    #    2.483 GHz                      (48.75%)
+      35,87,53,328      instructions              #    0.86  insn per cycle           (62.95%)
+       7,58,18,430      branches                  #  449.497 M/sec                    (65.04%)
+         12,60,499      branch-misses             #    1.66% of all branches          (66.44%)
+      11,23,45,401      L1-dcache-loads           #  666.051 M/sec                    (66.61%)
+       1,46,39,117      L1-dcache-load-misses     #   13.03% of all L1-dcache hits    (61.78%)
+         36,03,540      LLC-loads                 #   21.364 M/sec                    (46.13%)
+          4,06,726      LLC-load-misses           #   11.29% of all LL-cache hits     (45.25%)
+
+       0.099048298 seconds time elapsed
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./houghlines1080p
+This program demonstrates line finding with the Hough transform.
+Usage:
+./houghlines <image_name>, Default is pic1.jpg
+
+can not open 1080p1.jpg
+
+ Performance counter stats for 'timeout 1s ./houghlines1080p':
+
+      13,18,00,814      L1-dcache-loads
+       1,43,19,095      L1-dcache-load-misses     #   10.86% of all L1-dcache hits
+       5,65,11,739      L1-dcache-stores
+
+       0.124882651 seconds time elapsed
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./houghlines1080p
+This program demonstrates line finding with the Hough transform.
+Usage:
+./houghlines <image_name>, Default is pic1.jpg
+
+can not open 1080p1.jpg
+
+ Performance counter stats for 'timeout 1s ./houghlines1080p':
+
+      11,01,42,484      dTLB-loads
+            91,927      dTLB-load-misses          #    0.08% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       0.139319147 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./houghlines1080p
+This program demonstrates line finding with the Hough transform.
+Usage:
+./houghlines <image_name>, Default is pic1.jpg
+
+can not open 1080p1.jpg
+
+ Performance counter stats for 'timeout 1s ./houghlines1080p':
+
+         27,44,254      LLC-loads                                                     (69.66%)
+          1,97,056      LLC-load-misses           #    7.18% of all LL-cache hits     (67.36%)
+          1,80,319      LLC-stores                                                    (62.97%)
+   <not supported>      LLC-prefetches
+
+       0.102973643 seconds time elapsed

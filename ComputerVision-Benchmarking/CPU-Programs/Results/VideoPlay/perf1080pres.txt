@@ -1,0 +1,52 @@
+perf stat -d timeout 120s ./video_player10
+ Performance counter stats for 'timeout 10s ./video_player10':
+
+       6626.765184      task-clock (msec)         #    0.661 CPUs utilized
+             1,946      context-switches          #    0.294 K/sec
+               315      cpu-migrations            #    0.048 K/sec
+            30,873      page-faults               #    0.005 M/sec
+   14,92,23,88,956      cycles                    #    2.252 GHz                      (49.89%)
+   27,17,61,93,081      instructions              #    1.82  insn per cycle           (62.49%)
+    2,09,99,89,196      branches                  #  316.895 M/sec                    (62.44%)
+       1,05,33,094      branch-misses             #    0.50% of all branches          (62.99%)
+    8,08,91,02,862      L1-dcache-loads           # 1220.671 M/sec                    (62.86%)
+      43,01,94,014      L1-dcache-load-misses     #    5.32% of all L1-dcache hits    (62.45%)
+       5,72,10,485      LLC-loads                 #    8.633 M/sec                    (49.79%)
+       2,00,65,018      LLC-load-misses           #   35.07% of all LL-cache hits     (49.57%)
+
+      10.030553504 seconds time elapsed
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./video_player10
+
+ Performance counter stats for 'timeout 10s ./video_player10':
+
+    8,14,83,06,085      L1-dcache-loads
+      43,29,66,963      L1-dcache-load-misses     #    5.31% of all L1-dcache hits
+    5,09,17,86,152      L1-dcache-stores
+
+      10.035994520 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./video_player10
+ Performance counter stats for 'timeout 10s ./video_player10':
+
+    8,07,73,87,653      dTLB-loads
+         19,57,080      dTLB-load-misses          #    0.02% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+      10.039269905 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./video_player10
+ Performance counter stats for 'timeout 10s ./video_player10':
+
+       5,69,04,293      LLC-loads                                                     (67.02%)
+       2,03,67,050      LLC-load-misses           #   35.79% of all LL-cache hits     (66.56%)
+       4,31,95,602      LLC-stores                                                    (66.42%)
+   <not supported>      LLC-prefetches
+
+      10.037061010 seconds time elapsed

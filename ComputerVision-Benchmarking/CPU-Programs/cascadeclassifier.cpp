@@ -32,9 +32,11 @@ int main( void )
     capture.open( -1 );
     if ( ! capture.isOpened() ) { printf("--(!)Error opening video capture\n"); return -1; }
 
-    while (  capture.read(frame) )
+	VideoCapture cap("1080p.mp4");
+
+    while (  cap.read(frame) )
     {
-        if( frame.empty() )
+        if( !cap.isOpened() )
         {
             printf(" --(!) No captured frame -- Break!");
             break;

@@ -1,0 +1,51 @@
+perf stat -d timeout 10s ./pyrlk_optical_flow 1080p.mp4
+
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 1080p.mp4':
+
+      14359.845780      task-clock (msec)         #    1.431 CPUs utilized
+            71,207      context-switches          #    0.005 M/sec
+             1,297      cpu-migrations            #    0.090 K/sec
+            72,535      page-faults               #    0.005 M/sec
+   35,64,27,66,620      cycles                    #    2.482 GHz                      (49.81%)
+   59,05,74,52,900      instructions              #    1.66  insn per cycle           (62.54%)
+    3,92,97,17,523      branches                  #  273.660 M/sec                    (62.91%)
+       1,97,46,965      branch-misses             #    0.50% of all branches          (63.09%)
+   17,57,06,00,432      L1-dcache-loads           # 1223.593 M/sec                    (62.90%)
+      67,74,79,181      L1-dcache-load-misses     #    3.86% of all L1-dcache hits    (62.47%)
+       9,89,67,563      LLC-loads                 #    6.892 M/sec                    (49.58%)
+       3,71,76,948      LLC-load-misses           #   37.56% of all LL-cache hits     (49.24%)
+
+      10.036292072 seconds time elapsed
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./pyrlk_optical_flow 1080p.mp4
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 1080p.mp4':
+
+   16,49,84,48,166      L1-dcache-loads
+      69,87,03,716      L1-dcache-load-misses     #    4.23% of all L1-dcache hits
+    6,41,72,61,049      L1-dcache-stores
+
+      10.036067660 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./pyrlk_optical_flow 1080p.mp4
+Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 1080p.mp4':
+
+  14,61,54,37,147      dTLB-loads
+        32,15,017      dTLB-load-misses          #    0.02% of all dTLB cache hits
+  <not supported>      dTLB-prefetch-misses
+
+     10.033174489 seconds time elapsed
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./pyrlk_optical_flow 1080p.mp4
+Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 1080p.mp4':
+
+     10,09,69,922      LLC-loads                                                     (66.94%)
+      3,79,97,911      LLC-load-misses           #   37.63% of all LL-cache hits     (66.79%)
+      7,66,75,968      LLC-stores                                                    (66.27%)
+  <not supported>      LLC-prefetches
+
+     10.031601594 seconds time elapsed

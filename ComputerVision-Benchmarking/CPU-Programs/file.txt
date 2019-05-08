@@ -1,0 +1,9 @@
+
+ Performance counter stats for 'timeout 10s ./cascadeclassifier':
+
+   22,15,28,59,194      L1-dcache-loads                                             
+      40,93,81,743      L1-dcache-load-misses     #    1.85% of all L1-dcache hits  
+    3,39,88,83,125      L1-dcache-stores                                            
+
+      10.035596062 seconds time elapsed
+

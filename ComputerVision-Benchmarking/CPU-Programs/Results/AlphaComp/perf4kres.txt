@@ -1,0 +1,55 @@
+perf stat -d timeout 1s ./alpha_comp4k
+
+ Performance counter stats for 'timeout 1s ./alpha_comp4k':
+
+       1227.051670      task-clock (msec)         #    1.164 CPUs utilized
+               503      context-switches          #    0.410 K/sec
+                16      cpu-migrations            #    0.013 K/sec
+          1,02,224      page-faults               #    0.083 M/sec
+    3,10,82,71,566      cycles                    #    2.533 GHz                      (49.70%)
+    4,22,81,46,896      instructions              #    1.36  insn per cycle           (62.69%)
+      45,46,77,288      branches                  #  370.545 M/sec                    (63.12%)
+         71,16,185      branch-misses             #    1.57% of all branches          (63.02%)
+      98,42,71,475      L1-dcache-loads           #  802.143 M/sec                    (63.18%)
+       4,58,72,874      L1-dcache-load-misses     #    4.66% of all L1-dcache hits    (62.67%)
+         50,55,528      LLC-loads                 #    4.120 M/sec                    (49.17%)
+          7,80,991      LLC-load-misses           #   15.45% of all LL-cache hits     (49.13%)
+
+       1.054522841 seconds time elapsed
+
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./alpha_comp4k
+
+ Performance counter stats for 'timeout 1s ./alpha_comp4k':
+
+      92,53,00,531      L1-dcache-loads
+       4,38,82,106      L1-dcache-load-misses     #    4.74% of all L1-dcache hits
+      56,69,66,739      L1-dcache-stores
+
+       1.058169223 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./alpha_comp4k
+
+ Performance counter stats for 'timeout 1s ./alpha_comp4k':
+
+    1,00,03,90,021      dTLB-loads
+          3,41,910      dTLB-load-misses          #    0.03% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       1.060706391 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./alpha_comp4k
+
+ Performance counter stats for 'timeout 1s ./alpha_comp4k':
+
+         45,59,207      LLC-loads                                                     (66.84%)
+          6,90,509      LLC-load-misses           #   15.15% of all LL-cache hits     (67.32%)
+         79,12,901      LLC-stores                                                    (65.84%)
+   <not supported>      LLC-prefetches
+
+       1.042977865 seconds time elapsed

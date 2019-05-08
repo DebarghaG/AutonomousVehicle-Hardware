@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-    VideoCapture cap("car.mp4");
+    VideoCapture cap("1080p.mp4");
     // cap is the object of class video capture that tries to capture Bumpy.mp4
     if ( !cap.isOpened() ) // isOpened() returns true if capturing has been initialized.
     {

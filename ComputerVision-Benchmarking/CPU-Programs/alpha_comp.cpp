@@ -18,8 +18,8 @@ int main( void )
 	input = 1000.0;   
 	if( input >= 0 && input <= 1 )
      { alpha = input; }
-   src1 = imread( "pic1.jpg" );
-   src2 = imread( "pic2.jpg" );
+   src1 = imread( "1080p1.jpg" );
+   src2 = imread( "1080p2.jpg" );
    if( src1.empty() ) { cout << "Error loading src1" << endl; return -1; }
    if( src2.empty() ) { cout << "Error loading src2" << endl; return -1; }
    beta = ( 1.0 - alpha );

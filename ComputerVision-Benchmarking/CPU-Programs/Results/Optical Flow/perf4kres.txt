@@ -1,0 +1,50 @@
+perf stat -d timeout 10s ./pyrlk_optical_flow 4k.mkv
+Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 4k.mkv':
+
+     15691.386515      task-clock (msec)         #    1.563 CPUs utilized
+           43,719      context-switches          #    0.003 M/sec
+              511      cpu-migrations            #    0.033 K/sec
+         6,06,279      page-faults               #    0.039 M/sec
+  39,24,22,45,412      cycles                    #    2.501 GHz                      (49.65%)
+  58,67,13,66,874      instructions              #    1.50  insn per cycle           (62.12%)
+   4,21,17,63,569      branches                  #  268.412 M/sec                    (62.44%)
+      2,15,25,527      branch-misses             #    0.51% of all branches          (62.60%)
+  18,44,59,42,929      L1-dcache-loads           # 1175.546 M/sec                    (62.83%)
+     84,27,61,290      L1-dcache-load-misses     #    4.57% of all L1-dcache hits    (62.83%)
+     13,42,88,572      LLC-loads                 #    8.558 M/sec                    (49.79%)
+      5,60,84,346      LLC-load-misses           #   41.76% of all LL-cache hits     (49.86%)
+
+     10.041713911 seconds time elapsed
+
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 10s ./pyrlk_optical_flow 4k.mkv
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 4k.mkv':
+
+   18,43,04,13,615      L1-dcache-loads
+      78,89,09,591      L1-dcache-load-misses     #    4.28% of all L1-dcache hits
+    8,35,04,60,871      L1-dcache-stores
+
+      10.042321280 seconds time elapsed
+
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 10s ./pyrlk_optical_flow 4k.mkv
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 4k.mkv':
+
+   16,86,18,76,061      dTLB-loads
+         45,62,770      dTLB-load-misses          #    0.03% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+      10.043849761 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 10s ./pyrlk_optical_flow 4k.mkv
+ Performance counter stats for 'timeout 10s ./pyrlk_optical_flow 4k.mkv':
+
+      12,17,39,404      LLC-loads                                                     (66.68%)
+       4,37,26,666      LLC-load-misses           #   35.92% of all LL-cache hits     (66.57%)
+      11,92,70,264      LLC-stores                                                    (66.75%)
+   <not supported>      LLC-prefetches
+
+      10.049657887 seconds time elapsed

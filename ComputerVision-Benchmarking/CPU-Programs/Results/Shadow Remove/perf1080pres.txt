@@ -1,0 +1,48 @@
+perf stat -d timeout 1s ./shadow_remove1080p
+ Performance counter stats for 'timeout 1s ./shadow_remove1080p':
+
+        539.563485      task-clock (msec)         #    1.306 CPUs utilized
+               325      context-switches          #    0.602 K/sec
+                19      cpu-migrations            #    0.035 K/sec
+             7,068      page-faults               #    0.013 M/sec
+    1,33,73,74,756      cycles                    #    2.479 GHz                      (49.63%)
+      88,42,26,691      instructions              #    0.66  insn per cycle           (62.73%)
+      16,89,72,820      branches                  #  313.166 M/sec                    (61.29%)
+         32,42,078      branch-misses             #    1.92% of all branches          (61.91%)
+      25,79,86,588      L1-dcache-loads           #  478.139 M/sec                    (62.78%)
+       1,15,50,905      L1-dcache-load-misses     #    4.48% of all L1-dcache hits    (62.86%)
+         17,82,238      LLC-loads                 #    3.303 M/sec                    (51.12%)
+          3,58,700      LLC-load-misses           #   20.13% of all LL-cache hits     (50.42%)
+
+       0.413225669 seconds time elapsed
+
+perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores timeout 1s ./shadow_remove1080p
+Performance counter stats for 'timeout 1s ./shadow_remove1080p':
+
+     26,27,42,128      L1-dcache-loads
+      1,24,86,882      L1-dcache-load-misses     #    4.75% of all L1-dcache hits
+     14,58,85,851      L1-dcache-stores
+
+      0.407630378 seconds time elapsed
+
+
+perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses timeout 1s ./shadow_remove1080p
+ Performance counter stats for 'timeout 1s ./shadow_remove1080p':
+
+      24,97,10,812      dTLB-loads
+          1,69,195      dTLB-load-misses          #    0.07% of all dTLB cache hits
+   <not supported>      dTLB-prefetch-misses
+
+       0.400229342 seconds time elapsed
+
+
+
+perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches timeout 1s ./shadow_remove1080p
+Performance counter stats for 'timeout 1s ./shadow_remove1080p':
+
+        18,21,155      LLC-loads                                                     (66.89%)
+         4,15,309      LLC-load-misses           #   22.80% of all LL-cache hits     (67.83%)
+        14,47,722      LLC-stores                                                    (65.28%)
+  <not supported>      LLC-prefetches
+
+      0.355551120 seconds time elapsed
