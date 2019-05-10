@@ -1,6 +1,8 @@
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
 #include <iostream>
+
+auto start = high_resolution_clock::now();
 using namespace cv;
 // we're NOT "using namespace std;" here, to avoid collisions between the beta variable and std::beta in c++17
 using std::cin;
@@ -28,3 +30,7 @@ int main( void )
    waitKey(0);
    return 0;
 }
+
+auto stop = high_resolution_clock::now();
+auto duration = duration_cast<microseconds>(stop - start);
+cout << duration.count() << endl;
